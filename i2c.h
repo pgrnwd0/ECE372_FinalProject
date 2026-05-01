@@ -1,0 +1,17 @@
+#ifndef I2C_H
+#define I2C_H
+
+void initI2C();
+
+void StartI2C_Trans(unsigned char SLA);
+
+void StopI2C_Trans();
+
+void Write(unsigned char data);
+
+uint16_t Read_from(unsigned char SLA, unsigned char address);
+
+unsigned char Read_data();
+void Write16_to(unsigned char SLA, unsigned char address, uint16_t value);
+
+#endif
