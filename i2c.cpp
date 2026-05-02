@@ -78,7 +78,7 @@ uint16_t Read_from(unsigned char SLA, unsigned char address)
 
     StopI2C_Trans();
 
-    return ((uint16_t)msb << 8) | lsb;
+    return ((uint16_t)msb << 8) | lsb; 
 }
 
 //6. unsigned char Read_data()
