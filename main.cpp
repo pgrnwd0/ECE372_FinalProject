@@ -16,8 +16,8 @@ int main(){
   Write16_to(0x40, 0x05, 0x1061); // calibrate for 10 ohm shunt
   
   // relay control pin
-  DDRA  |= (1 << PA0);
-  PORTA &= ~(1 << PA0); 
+  DDRH  |= (1 << PH5);
+  PORTH &= ~(1 << PH5); 
 
   // set up LCD
   moveCursor(0,0);
@@ -38,26 +38,25 @@ int main(){
         sprintf(currentArray, "%.2f", current_mA);
       
         if (current_mA <= 0.01){ // Current is too low
-          PORTA |= (1 << PA0); // trigger switch
+          PORTH |= (1 << PH5); // trigger switch
+
+          // write to LCD
           moveCursor(0,0);
           writeString("System Fault  ");
           delayMs(200); // delay
         }
-        else{
-          PORTA &= ~(1 << PA0);
+        else{ // current is good
+          PORTH &= ~(1 << PH5);
+          
           moveCursor(0,0);
           writeString("System Good  ");
           delayMs(200);
         }
-
+       // display Current on LCD
       moveCursor(1,0);
-      writeString("Current: ");
+      writeString("I: ");
       writeString(currentArray);
-      writeString("A");
-
-      
-        
-        
+      writeString("mA");        
     }
 
   return 0;
