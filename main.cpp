@@ -35,7 +35,7 @@ int main(){
 
         // convert current float to string for LCD
         char currentArray[10];
-        sprintf(currentArray, "%.2f", current_mA);
+        dtostrf(current_mA, 6, 2, currentArray);
       
         if (current_mA <= 0.01){ // Current is too low
           PORTH |= (1 << PH5); // trigger switch
