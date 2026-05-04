@@ -1,13 +1,8 @@
-// Description: This file implements functions that utilize the timers
-//----------------------------------------------------------------------//
-
 #include "timer.h"
 
-/* Initialize timer 0, you should not turn the timer on here.
-* You will need to use CTC mode */
 void initTimer0(){
+    
     // set mode CTC (010)
-
     TCCR0A &= ~(1 << WGM00);
     TCCR0A |= (1 << WGM01);
     TCCR0B &= ~(1 << WGM02);
