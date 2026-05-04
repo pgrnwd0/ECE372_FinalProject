@@ -3,10 +3,6 @@
 #include "timer.h"
 #include "lcd.h"
 
-enum State {OPEN, DEBOUNCE, CLOSED};
-State state;
-
-
 int main(){
   Serial.begin(115200);
 
