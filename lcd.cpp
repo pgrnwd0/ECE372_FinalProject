@@ -1,15 +1,8 @@
-// Author: 
-// Net ID: 
-// Date: 
-// Assignment: Lab 3
-//----------------------------------------------------------------------//
 #include "lcd.h"
 #include "timer.h"
 #include <util/delay.h>
 
-/*
- * Initializes all pins related to the LCD to be outputs
- */
+// Initialize all pins related to the LCD to be outputs
 void initLCDPins(){
     DDRB |= ((1 << DDB6) | (1 << DDB4)); //set ports B4 and B6 to output, 
     //B4 and B6 are for the enable and Rs pin, respectively
