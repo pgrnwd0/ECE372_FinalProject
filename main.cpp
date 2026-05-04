@@ -25,7 +25,7 @@ int main(){
 
   while (1)
     {
-        int16_t  raw_current = (int16_t)Read_from(0x40, 0x04);
+        int16_t  raw_current = (int16_t)Read_from(0x40, 0x04); // read current
 
         float   current_mA = raw_current * 0.000977f; // value from datasheet to set 0.1mA per bit
       
